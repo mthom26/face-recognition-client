@@ -1,0 +1,14 @@
+.navContainer {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+}
+
+.navLink {
+  padding: 0.5rem 1rem;
+}

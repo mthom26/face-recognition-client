@@ -31,7 +31,22 @@ class SignUp extends Component {
 
   onSubmit = async event => {
     event.preventDefault();
-    console.log(this.state.formData);
+    try {
+      const url = `${process.env.REACT_APP_SERVER_URL}/signup`;
+
+      const result = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(this.state.formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      const data = await result.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   render() {

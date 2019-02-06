@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import styles from './SignUp.module.css';
+
 const initialFormData = {
   name: '',
   email: '',
@@ -53,9 +55,9 @@ class SignUp extends Component {
     const { name, email, password, confirmPassword } = this.state.formData;
 
     return (
-      <div>
+      <div className={styles.container}>
         <h2>Sign Up</h2>
-        <form>
+        <form className={styles.form}>
           <input
             onChange={this.onUpdateState}
             value={name}
@@ -92,7 +94,9 @@ class SignUp extends Component {
             id="confirmPassword"
           />
 
-          <button onClick={this.onSubmit}>Submit</button>
+          <button className={styles.button} onClick={this.onSubmit}>
+            Submit
+          </button>
         </form>
       </div>
     );

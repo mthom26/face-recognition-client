@@ -3,6 +3,7 @@
   position: fixed;
   display: flex;
   justify-content: space-between;
+  background: #212121;
 }
 
 .nav {
@@ -10,5 +11,21 @@
 }
 
 .navLink {
-  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(to right, #f3904f, #3b4371);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navLink:hover {
+  -webkit-text-fill-color: #ffffff2a;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #f3904f, #3b4371);
 }

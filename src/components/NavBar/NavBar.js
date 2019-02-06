@@ -16,6 +16,7 @@ class NavBar extends Component {
             Sign Up
           </Link>
         </nav>
+        <div className={styles.bottom} />
       </div>
     );
   }

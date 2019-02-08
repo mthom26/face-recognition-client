@@ -4,6 +4,10 @@ import CustomForm from '../CustomForm/CustomForm';
 import styles from './Login.module.css';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   onSubmit = async formData => {
     try {
       const url = `${process.env.REACT_APP_SERVER_URL}/login`;
@@ -17,6 +21,12 @@ class Login extends Component {
       });
 
       const data = await result.json();
+      this.props.setUser({
+        id: data.id,
+        name: data.name,
+        email: data.email
+      });
+      this.props.setToken(data.token);
       console.log(data);
     } catch (err) {
       console.log(err);

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
+import Profile from '../Profile/Profile';
 
 import styles from './App.module.css';
 
@@ -45,6 +46,7 @@ class App extends Component {
                 <SignUp setUser={this.setUser} setToken={this.setToken} />
               )}
             />
+            <Route exact path="/profile" render={() => <Profile />} />
           </div>
         </Fragment>
       </Router>

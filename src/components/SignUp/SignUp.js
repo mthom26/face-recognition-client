@@ -4,10 +4,6 @@ import CustomForm from '../CustomForm/CustomForm';
 import styles from './SignUp.module.css';
 
 class SignUp extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   onSubmit = async formData => {
     try {
       const url = `${process.env.REACT_APP_SERVER_URL}/signup`;

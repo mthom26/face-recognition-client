@@ -15,6 +15,9 @@ class NavBar extends Component {
           <Link className={styles.navLink} to="/signup">
             Sign Up
           </Link>
+          <Link className={styles.navLink} to="/profile">
+            Profile
+          </Link>
         </nav>
         <div className={styles.bottom} />
       </div>

@@ -5,6 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import Profile from '../Profile/Profile';
+import Upload from '../Upload/Upload';
 
 import styles from './App.module.css';
 
@@ -49,6 +50,11 @@ class App extends Component {
         <Fragment>
           <NavBar />
           <div className={styles.app}>
+            <Route
+              exact
+              path="/upload"
+              render={() => <Upload token={this.state.token} />}
+            />
             <Route
               exact
               path="/login"

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@uppy/core": "^0.29.1",
+    "@uppy/react": "^0.29.1",
+    "@uppy/xhr-upload": "^0.29.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",

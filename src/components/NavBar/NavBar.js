@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './NavBar.module.css';
 
@@ -9,18 +9,34 @@ class NavBar extends Component {
       <div className={styles.navContainer}>
         <div>Logo</div>
         <nav className={styles.nav}>
-          <Link className={styles.navLink} to="/upload">
+          <NavLink
+            activeClassName={styles.activeNavLink}
+            className={styles.navLink}
+            to="/upload"
+          >
             Upload
-          </Link>
-          <Link className={styles.navLink} to="/login">
+          </NavLink>
+          <NavLink
+            activeClassName={styles.activeNavLink}
+            className={styles.navLink}
+            to="/login"
+          >
             Login
-          </Link>
-          <Link className={styles.navLink} to="/signup">
+          </NavLink>
+          <NavLink
+            activeClassName={styles.activeNavLink}
+            className={styles.navLink}
+            to="/signup"
+          >
             Sign Up
-          </Link>
-          <Link className={styles.navLink} to="/profile">
+          </NavLink>
+          <NavLink
+            activeClassName={styles.activeNavLink}
+            className={styles.navLink}
+            to="/profile"
+          >
             Profile
-          </Link>
+          </NavLink>
         </nav>
         <div className={styles.bottom} />
       </div>

@@ -13,13 +13,19 @@
 .navLink {
   font-size: 1.5rem;
   padding: 1rem 1.2rem;
-  background: linear-gradient(to right, #f3904f, #3b4371);
+  background: linear-gradient(to right, #d2d2d2, #d2d2d2);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .navLink:hover {
-  -webkit-text-fill-color: #ffffff2a;
+  background: linear-gradient(to right, #f3904f, #3b4371);
+  background-clip: text;
+}
+
+.activeNavLink {
+  background: linear-gradient(to right, #f3904f, #3b4371);
+  background-clip: text;
 }
 
 .bottom {

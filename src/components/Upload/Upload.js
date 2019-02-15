@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Uppy from '@uppy/core';
 import XHRUpload from '@uppy/xhr-upload';
 import { DragDrop } from '@uppy/react';
-import '@uppy/drag-drop/dist/style.css';
+// import '@uppy/drag-drop/dist/style.css';
 
 import styles from './Upload.module.css';
 

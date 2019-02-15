@@ -9,6 +9,9 @@ class NavBar extends Component {
       <div className={styles.navContainer}>
         <div>Logo</div>
         <nav className={styles.nav}>
+          <Link className={styles.navLink} to="/upload">
+            Upload
+          </Link>
           <Link className={styles.navLink} to="/login">
             Login
           </Link>

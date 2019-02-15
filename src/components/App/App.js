@@ -29,9 +29,25 @@ class App extends Component {
     localStorage.setItem('token', token);
   };
 
-  getUserData = (token, email) => {
+  getUserData = async (token, email) => {
     // Call server and get User data for provided email
-    console.log('Get User Data');
+    try {
+      const url = `${process.env.REACT_APP_SERVER_URL}/profile`;
+
+      const result = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      const data = await result.json();
+      this.setState({ user: data.user });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   componentDidMount() {

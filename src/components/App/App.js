@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import NavBar from '../NavBar/NavBar';
 import Login from '../Login/Login';
@@ -84,7 +84,13 @@ class App extends Component {
             <Route
               exact
               path="/upload"
-              render={() => <Upload token={this.state.token} />}
+              render={() =>
+                isLoggedIn ? (
+                  <Upload token={this.state.token} />
+                ) : (
+                  <Redirect to="/login" />
+                )
+              }
             />
             <Route
               exact
@@ -111,7 +117,9 @@ class App extends Component {
             <Route
               exact
               path="/profile"
-              render={() => <Profile user={user} />}
+              render={() =>
+                isLoggedIn ? <Profile user={user} /> : <Redirect to="/login" />
+              }
             />
           </div>
         </Fragment>

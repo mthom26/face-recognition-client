@@ -1,0 +1,711 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders with user logged in 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NavBar
+    loggedIn={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          Logo
+        </div>,
+        <nav
+          className="nav"
+        >
+          <React.Fragment>
+            <NavLink
+              activeClassName="activeNavLink"
+              aria-current="page"
+              className="navLink"
+              to="/upload"
+            >
+              Upload
+            </NavLink>
+            <NavLink
+              activeClassName="activeNavLink"
+              aria-current="page"
+              className="navLink"
+              to="/profile"
+            >
+              Profile
+            </NavLink>
+          </React.Fragment>
+        </nav>,
+        <div
+          className="bottom"
+        />,
+      ],
+      "className": "navContainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Logo",
+        },
+        "ref": null,
+        "rendered": "Logo",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            false,
+            <React.Fragment>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/upload"
+              >
+                Upload
+              </NavLink>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/profile"
+              >
+                Profile
+              </NavLink>
+            </React.Fragment>,
+          ],
+          "className": "nav",
+        },
+        "ref": null,
+        "rendered": Array [
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/upload"
+                >
+                  Upload
+                </NavLink>,
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/profile"
+                >
+                  Profile
+                </NavLink>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "activeNavLink",
+                  "aria-current": "page",
+                  "children": "Upload",
+                  "className": "navLink",
+                  "to": "/upload",
+                },
+                "ref": null,
+                "rendered": "Upload",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "activeNavLink",
+                  "aria-current": "page",
+                  "children": "Profile",
+                  "className": "navLink",
+                  "to": "/profile",
+                },
+                "ref": null,
+                "rendered": "Profile",
+                "type": [Function],
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+        ],
+        "type": "nav",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "bottom",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            Logo
+          </div>,
+          <nav
+            className="nav"
+          >
+            <React.Fragment>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/upload"
+              >
+                Upload
+              </NavLink>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/profile"
+              >
+                Profile
+              </NavLink>
+            </React.Fragment>
+          </nav>,
+          <div
+            className="bottom"
+          />,
+        ],
+        "className": "navContainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Logo",
+          },
+          "ref": null,
+          "rendered": "Logo",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              false,
+              <React.Fragment>
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/upload"
+                >
+                  Upload
+                </NavLink>
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/profile"
+                >
+                  Profile
+                </NavLink>
+              </React.Fragment>,
+            ],
+            "className": "nav",
+          },
+          "ref": null,
+          "rendered": Array [
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <NavLink
+                    activeClassName="activeNavLink"
+                    aria-current="page"
+                    className="navLink"
+                    to="/upload"
+                  >
+                    Upload
+                  </NavLink>,
+                  <NavLink
+                    activeClassName="activeNavLink"
+                    aria-current="page"
+                    className="navLink"
+                    to="/profile"
+                  >
+                    Profile
+                  </NavLink>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "activeNavLink",
+                    "aria-current": "page",
+                    "children": "Upload",
+                    "className": "navLink",
+                    "to": "/upload",
+                  },
+                  "ref": null,
+                  "rendered": "Upload",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "activeNavLink",
+                    "aria-current": "page",
+                    "children": "Profile",
+                    "className": "navLink",
+                    "to": "/profile",
+                  },
+                  "ref": null,
+                  "rendered": "Profile",
+                  "type": [Function],
+                },
+              ],
+              "type": Symbol(react.fragment),
+            },
+          ],
+          "type": "nav",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "bottom",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`NavBar renders without user logged in 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NavBar
+    loggedIn={false}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          Logo
+        </div>,
+        <nav
+          className="nav"
+        >
+          <React.Fragment>
+            <NavLink
+              activeClassName="activeNavLink"
+              aria-current="page"
+              className="navLink"
+              to="/login"
+            >
+              Login
+            </NavLink>
+            <NavLink
+              activeClassName="activeNavLink"
+              aria-current="page"
+              className="navLink"
+              to="/signup"
+            >
+              Sign Up
+            </NavLink>
+          </React.Fragment>
+        </nav>,
+        <div
+          className="bottom"
+        />,
+      ],
+      "className": "navContainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Logo",
+        },
+        "ref": null,
+        "rendered": "Logo",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <React.Fragment>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/login"
+              >
+                Login
+              </NavLink>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/signup"
+              >
+                Sign Up
+              </NavLink>
+            </React.Fragment>,
+            false,
+          ],
+          "className": "nav",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/login"
+                >
+                  Login
+                </NavLink>,
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/signup"
+                >
+                  Sign Up
+                </NavLink>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "activeNavLink",
+                  "aria-current": "page",
+                  "children": "Login",
+                  "className": "navLink",
+                  "to": "/login",
+                },
+                "ref": null,
+                "rendered": "Login",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "activeNavLink",
+                  "aria-current": "page",
+                  "children": "Sign Up",
+                  "className": "navLink",
+                  "to": "/signup",
+                },
+                "ref": null,
+                "rendered": "Sign Up",
+                "type": [Function],
+              },
+            ],
+            "type": Symbol(react.fragment),
+          },
+          false,
+        ],
+        "type": "nav",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "bottom",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            Logo
+          </div>,
+          <nav
+            className="nav"
+          >
+            <React.Fragment>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/login"
+              >
+                Login
+              </NavLink>
+              <NavLink
+                activeClassName="activeNavLink"
+                aria-current="page"
+                className="navLink"
+                to="/signup"
+              >
+                Sign Up
+              </NavLink>
+            </React.Fragment>
+          </nav>,
+          <div
+            className="bottom"
+          />,
+        ],
+        "className": "navContainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Logo",
+          },
+          "ref": null,
+          "rendered": "Logo",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <React.Fragment>
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/login"
+                >
+                  Login
+                </NavLink>
+                <NavLink
+                  activeClassName="activeNavLink"
+                  aria-current="page"
+                  className="navLink"
+                  to="/signup"
+                >
+                  Sign Up
+                </NavLink>
+              </React.Fragment>,
+              false,
+            ],
+            "className": "nav",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <NavLink
+                    activeClassName="activeNavLink"
+                    aria-current="page"
+                    className="navLink"
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>,
+                  <NavLink
+                    activeClassName="activeNavLink"
+                    aria-current="page"
+                    className="navLink"
+                    to="/signup"
+                  >
+                    Sign Up
+                  </NavLink>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "activeNavLink",
+                    "aria-current": "page",
+                    "children": "Login",
+                    "className": "navLink",
+                    "to": "/login",
+                  },
+                  "ref": null,
+                  "rendered": "Login",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "activeNavLink",
+                    "aria-current": "page",
+                    "children": "Sign Up",
+                    "className": "navLink",
+                    "to": "/signup",
+                  },
+                  "ref": null,
+                  "rendered": "Sign Up",
+                  "type": [Function],
+                },
+              ],
+              "type": Symbol(react.fragment),
+            },
+            false,
+          ],
+          "type": "nav",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "bottom",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

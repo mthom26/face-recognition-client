@@ -18,36 +18,22 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h2>
-        Login
-      </h2>,
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "Login",
-      },
-      "ref": null,
-      "rendered": "Login",
-      "type": "h2",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <h2>
+      "children": Array [
+        <h2>
           Login
         </h2>,
-      },
-      "ref": null,
-      "rendered": Object {
+        <CustomForm
+          onSubmitAction={[Function]}
+          showEmail={true}
+          showPassword={true}
+          showPwConfirm={true}
+        />,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -58,6 +44,70 @@ ShallowWrapper {
         "rendered": "Login",
         "type": "h2",
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "onSubmitAction": [Function],
+          "showEmail": true,
+          "showPassword": true,
+          "showPwConfirm": true,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Login
+          </h2>,
+          <CustomForm
+            onSubmitAction={[Function]}
+            showEmail={true}
+            showPassword={true}
+            showPwConfirm={true}
+          />,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Login",
+          },
+          "ref": null,
+          "rendered": "Login",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "onSubmitAction": [Function],
+            "showEmail": true,
+            "showPassword": true,
+            "showPwConfirm": true,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
       "type": "div",
     },
   ],

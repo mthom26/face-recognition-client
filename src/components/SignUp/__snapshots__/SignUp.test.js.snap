@@ -22,46 +22,15 @@ ShallowWrapper {
         <h2>
           Sign Up
         </h2>,
-        <form>
-          <input
-            id="name"
-            name="name"
-            onChange={[Function]}
-            placeholder="Name"
-            type="text"
-            value=""
-          />
-          <input
-            id="email"
-            name="email"
-            onChange={[Function]}
-            placeholder="Email"
-            type="text"
-            value=""
-          />
-          <input
-            id="password"
-            name="password"
-            onChange={[Function]}
-            placeholder="Password"
-            type="password"
-            value=""
-          />
-          <input
-            id="confirmPassword"
-            name="confirmPassword"
-            onChange={[Function]}
-            placeholder="Confirm Password"
-            type="password"
-            value=""
-          />
-          <button
-            onClick={[Function]}
-          >
-            Submit
-          </button>
-        </form>,
+        <CustomForm
+          onSubmitAction={[Function]}
+          showEmail={true}
+          showName={true}
+          showPassword={true}
+          showPwConfirm={true}
+        />,
       ],
+      "className": "container",
     },
     "ref": null,
     "rendered": Array [
@@ -79,128 +48,17 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "children": Array [
-            <input
-              id="name"
-              name="name"
-              onChange={[Function]}
-              placeholder="Name"
-              type="text"
-              value=""
-            />,
-            <input
-              id="email"
-              name="email"
-              onChange={[Function]}
-              placeholder="Email"
-              type="text"
-              value=""
-            />,
-            <input
-              id="password"
-              name="password"
-              onChange={[Function]}
-              placeholder="Password"
-              type="password"
-              value=""
-            />,
-            <input
-              id="confirmPassword"
-              name="confirmPassword"
-              onChange={[Function]}
-              placeholder="Confirm Password"
-              type="password"
-              value=""
-            />,
-            <button
-              onClick={[Function]}
-            >
-              Submit
-            </button>,
-          ],
+          "onSubmitAction": [Function],
+          "showEmail": true,
+          "showName": true,
+          "showPassword": true,
+          "showPwConfirm": true,
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "id": "name",
-              "name": "name",
-              "onChange": [Function],
-              "placeholder": "Name",
-              "type": "text",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "id": "email",
-              "name": "email",
-              "onChange": [Function],
-              "placeholder": "Email",
-              "type": "text",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "id": "password",
-              "name": "password",
-              "onChange": [Function],
-              "placeholder": "Password",
-              "type": "password",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "id": "confirmPassword",
-              "name": "confirmPassword",
-              "onChange": [Function],
-              "placeholder": "Confirm Password",
-              "type": "password",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Submit",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Submit",
-            "type": "button",
-          },
-        ],
-        "type": "form",
+        "rendered": null,
+        "type": [Function],
       },
     ],
     "type": "div",
@@ -215,46 +73,15 @@ ShallowWrapper {
           <h2>
             Sign Up
           </h2>,
-          <form>
-            <input
-              id="name"
-              name="name"
-              onChange={[Function]}
-              placeholder="Name"
-              type="text"
-              value=""
-            />
-            <input
-              id="email"
-              name="email"
-              onChange={[Function]}
-              placeholder="Email"
-              type="text"
-              value=""
-            />
-            <input
-              id="password"
-              name="password"
-              onChange={[Function]}
-              placeholder="Password"
-              type="password"
-              value=""
-            />
-            <input
-              id="confirmPassword"
-              name="confirmPassword"
-              onChange={[Function]}
-              placeholder="Confirm Password"
-              type="password"
-              value=""
-            />
-            <button
-              onClick={[Function]}
-            >
-              Submit
-            </button>
-          </form>,
+          <CustomForm
+            onSubmitAction={[Function]}
+            showEmail={true}
+            showName={true}
+            showPassword={true}
+            showPwConfirm={true}
+          />,
         ],
+        "className": "container",
       },
       "ref": null,
       "rendered": Array [
@@ -272,128 +99,17 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": Array [
-              <input
-                id="name"
-                name="name"
-                onChange={[Function]}
-                placeholder="Name"
-                type="text"
-                value=""
-              />,
-              <input
-                id="email"
-                name="email"
-                onChange={[Function]}
-                placeholder="Email"
-                type="text"
-                value=""
-              />,
-              <input
-                id="password"
-                name="password"
-                onChange={[Function]}
-                placeholder="Password"
-                type="password"
-                value=""
-              />,
-              <input
-                id="confirmPassword"
-                name="confirmPassword"
-                onChange={[Function]}
-                placeholder="Confirm Password"
-                type="password"
-                value=""
-              />,
-              <button
-                onClick={[Function]}
-              >
-                Submit
-              </button>,
-            ],
+            "onSubmitAction": [Function],
+            "showEmail": true,
+            "showName": true,
+            "showPassword": true,
+            "showPwConfirm": true,
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "id": "name",
-                "name": "name",
-                "onChange": [Function],
-                "placeholder": "Name",
-                "type": "text",
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "input",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "id": "email",
-                "name": "email",
-                "onChange": [Function],
-                "placeholder": "Email",
-                "type": "text",
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "input",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "id": "password",
-                "name": "password",
-                "onChange": [Function],
-                "placeholder": "Password",
-                "type": "password",
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "input",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "id": "confirmPassword",
-                "name": "confirmPassword",
-                "onChange": [Function],
-                "placeholder": "Confirm Password",
-                "type": "password",
-                "value": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "input",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Submit",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Submit",
-              "type": "button",
-            },
-          ],
-          "type": "form",
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",

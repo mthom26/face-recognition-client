@@ -61,10 +61,12 @@ class App extends Component {
   }
 
   render() {
+    const loggedIn = this.state.token ? true : false;
+
     return (
       <Router>
         <Fragment>
-          <NavBar />
+          <NavBar loggedIn={loggedIn} />
           <div className={styles.app}>
             <Route
               exact

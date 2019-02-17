@@ -44,6 +44,12 @@ ShallowWrapper {
             >
               Profile
             </NavLink>
+            <div
+              className="navLink"
+              onClick={[Function]}
+            >
+              Logout
+            </div>
           </React.Fragment>
         </nav>,
         <div
@@ -89,6 +95,12 @@ ShallowWrapper {
               >
                 Profile
               </NavLink>
+              <div
+                className="navLink"
+                onClick={[Function]}
+              >
+                Logout
+              </div>
             </React.Fragment>,
           ],
           "className": "nav",
@@ -118,6 +130,12 @@ ShallowWrapper {
                 >
                   Profile
                 </NavLink>,
+                <div
+                  className="navLink"
+                  onClick={[Function]}
+                >
+                  Logout
+                </div>,
               ],
             },
             "ref": null,
@@ -151,6 +169,19 @@ ShallowWrapper {
                 "ref": null,
                 "rendered": "Profile",
                 "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Logout",
+                  "className": "navLink",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Logout",
+                "type": "div",
               },
             ],
             "type": Symbol(react.fragment),
@@ -202,6 +233,12 @@ ShallowWrapper {
               >
                 Profile
               </NavLink>
+              <div
+                className="navLink"
+                onClick={[Function]}
+              >
+                Logout
+              </div>
             </React.Fragment>
           </nav>,
           <div
@@ -247,6 +284,12 @@ ShallowWrapper {
                 >
                   Profile
                 </NavLink>
+                <div
+                  className="navLink"
+                  onClick={[Function]}
+                >
+                  Logout
+                </div>
               </React.Fragment>,
             ],
             "className": "nav",
@@ -276,6 +319,12 @@ ShallowWrapper {
                   >
                     Profile
                   </NavLink>,
+                  <div
+                    className="navLink"
+                    onClick={[Function]}
+                  >
+                    Logout
+                  </div>,
                 ],
               },
               "ref": null,
@@ -309,6 +358,19 @@ ShallowWrapper {
                   "ref": null,
                   "rendered": "Profile",
                   "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Logout",
+                    "className": "navLink",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "Logout",
+                  "type": "div",
                 },
               ],
               "type": Symbol(react.fragment),

@@ -23,6 +23,7 @@ class Login extends Component {
         email: data.email
       });
       this.props.setToken(data.token);
+      this.props.setIsLoggedIn(true);
       console.log(data);
     } catch (err) {
       console.log(err);

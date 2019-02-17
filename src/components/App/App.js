@@ -9,14 +9,17 @@ import Upload from '../Upload/Upload';
 
 import styles from './App.module.css';
 
+const defaultState = {
+  user: {},
+  token: null,
+  isLoggedIn: false
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      user: {},
-      token: null
-    };
+    this.state = defaultState;
   }
 
   setUser = user => {
@@ -27,6 +30,10 @@ class App extends Component {
   setToken = token => {
     this.setState({ token: token });
     localStorage.setItem('token', token);
+  };
+
+  setIsLoggedIn = value => {
+    this.setState({ isLoggedIn: value });
   };
 
   getUserData = async (token, email) => {
@@ -44,10 +51,16 @@ class App extends Component {
       });
 
       const data = await result.json();
-      this.setState({ user: data.user });
+      this.setState({ token, user: data.user, isLoggedIn: true });
     } catch (err) {
       console.log(err);
     }
+  };
+
+  logOut = () => {
+    this.setState(defaultState);
+    localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');
   };
 
   componentDidMount() {
@@ -56,18 +69,17 @@ class App extends Component {
     const userEmail = localStorage.getItem('userEmail');
     if (token && userEmail) {
       this.getUserData(token, userEmail);
-      this.setState({ token: token });
     }
   }
 
   render() {
     const { user } = this.state;
-    const loggedIn = this.state.token ? true : false;
+    const { isLoggedIn } = this.state;
 
     return (
       <Router>
         <Fragment>
-          <NavBar loggedIn={loggedIn} />
+          <NavBar loggedIn={isLoggedIn} logOut={this.logOut} />
           <div className={styles.app}>
             <Route
               exact
@@ -78,14 +90,22 @@ class App extends Component {
               exact
               path="/login"
               render={() => (
-                <Login setUser={this.setUser} setToken={this.setToken} />
+                <Login
+                  setUser={this.setUser}
+                  setToken={this.setToken}
+                  setIsLoggedIn={this.setIsLoggedIn}
+                />
               )}
             />
             <Route
               exact
               path="/signup"
               render={() => (
-                <SignUp setUser={this.setUser} setToken={this.setToken} />
+                <SignUp
+                  setUser={this.setUser}
+                  setToken={this.setToken}
+                  setIsLoggedIn={this.setIsLoggedIn}
+                />
               )}
             />
             <Route

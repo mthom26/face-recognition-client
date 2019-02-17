@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './NavBar.module.css';
 
-const NavBar = ({ loggedIn }) => {
+const NavBar = ({ loggedIn, logOut }) => {
   return (
     <div className={styles.navContainer}>
       <div>Logo</div>
@@ -42,6 +42,9 @@ const NavBar = ({ loggedIn }) => {
             >
               Profile
             </NavLink>
+            <div onClick={() => logOut()} className={styles.navLink}>
+              Logout
+            </div>
           </Fragment>
         )}
       </nav>

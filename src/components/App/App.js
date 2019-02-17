@@ -61,6 +61,7 @@ class App extends Component {
   }
 
   render() {
+    const { user } = this.state;
     const loggedIn = this.state.token ? true : false;
 
     return (
@@ -87,7 +88,11 @@ class App extends Component {
                 <SignUp setUser={this.setUser} setToken={this.setToken} />
               )}
             />
-            <Route exact path="/profile" render={() => <Profile />} />
+            <Route
+              exact
+              path="/profile"
+              render={() => <Profile user={user} />}
+            />
           </div>
         </Fragment>
       </Router>

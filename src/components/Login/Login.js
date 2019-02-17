@@ -34,12 +34,7 @@ class Login extends Component {
     return (
       <div className={styles.container}>
         <h2>Login</h2>
-        <CustomForm
-          showEmail
-          showPassword
-          showPwConfirm
-          onSubmitAction={this.onSubmit}
-        />
+        <CustomForm showEmail showPassword onSubmitAction={this.onSubmit} />
       </div>
     );
   }

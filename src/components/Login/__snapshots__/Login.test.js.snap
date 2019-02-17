@@ -26,7 +26,6 @@ ShallowWrapper {
           onSubmitAction={[Function]}
           showEmail={true}
           showPassword={true}
-          showPwConfirm={true}
         />,
       ],
       "className": "container",
@@ -52,7 +51,6 @@ ShallowWrapper {
           "onSubmitAction": [Function],
           "showEmail": true,
           "showPassword": true,
-          "showPwConfirm": true,
         },
         "ref": null,
         "rendered": null,
@@ -75,7 +73,6 @@ ShallowWrapper {
             onSubmitAction={[Function]}
             showEmail={true}
             showPassword={true}
-            showPwConfirm={true}
           />,
         ],
         "className": "container",
@@ -101,7 +98,6 @@ ShallowWrapper {
             "onSubmitAction": [Function],
             "showEmail": true,
             "showPassword": true,
-            "showPwConfirm": true,
           },
           "ref": null,
           "rendered": null,

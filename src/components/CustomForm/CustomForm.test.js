@@ -29,24 +29,6 @@ describe('CustomForm', () => {
   });
 
   describe('handles user interaction', () => {
-    it('should call onSubmitAction when clicked', () => {
-      const props = {
-        showName: true,
-        showEmail: true,
-        showPassword: true,
-        showPwConfirm: true,
-        onSubmitAction: jest.fn()
-      };
-      const wrapper = mount(<CustomForm {...props} />);
-      wrapper.find('button').simulate('click');
-      expect(props.onSubmitAction).toHaveBeenCalledTimes(1);
-      expect(props.onSubmitAction).toHaveBeenCalledWith({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      });
-    });
     it('should register data on input fields', () => {
       const props = {
         showName: true,
@@ -81,6 +63,88 @@ describe('CustomForm', () => {
         password: 'muhpassword',
         confirmPassword: 'muhpassword'
       });
+    });
+  });
+
+  describe('validates inputs', () => {
+    it('ignores empty inputs when they are not required', () => {
+      const props = {
+        showName: false,
+        showEmail: true,
+        showPassword: true,
+        showPwConfirm: false,
+        onSubmitAction: jest.fn()
+      };
+      const wrapper = mount(<CustomForm {...props} />);
+
+      const emailInput = wrapper.find('#email');
+      emailInput.instance().value = 'testemail@mail.com';
+      emailInput.simulate('change');
+
+      const pwInput = wrapper.find('#password');
+      pwInput.instance().value = 'muhpassword';
+      pwInput.simulate('change');
+
+      wrapper.find('button').simulate('click');
+      expect(props.onSubmitAction).toHaveBeenCalledTimes(1);
+      expect(props.onSubmitAction).toHaveBeenCalledWith({
+        name: '',
+        email: 'testemail@mail.com',
+        password: 'muhpassword',
+        confirmPassword: ''
+      });
+    });
+
+    it('does not call onSubmitAction when inputs are empty', () => {
+      const props = {
+        showName: false,
+        showEmail: true,
+        showPassword: true,
+        showPwConfirm: false,
+        onSubmitAction: jest.fn()
+      };
+      const wrapper = mount(<CustomForm {...props} />);
+
+      const emailInput = wrapper.find('#email');
+      emailInput.instance().value = 'testemail@mail.com';
+      emailInput.simulate('change');
+
+      const pwInput = wrapper.find('#password');
+      pwInput.instance().value = '';
+      pwInput.simulate('change');
+
+      wrapper.find('button').simulate('click');
+      expect(props.onSubmitAction).toHaveBeenCalledTimes(0);
+    });
+
+    it('checks password matches confirm password', () => {
+      const props = {
+        showName: true,
+        showEmail: true,
+        showPassword: true,
+        showPwConfirm: true,
+        onSubmitAction: jest.fn()
+      };
+      const wrapper = mount(<CustomForm {...props} />);
+
+      const nameInput = wrapper.find('#name');
+      nameInput.instance().value = 'testName';
+      nameInput.simulate('change');
+
+      const emailInput = wrapper.find('#email');
+      emailInput.instance().value = 'testemail@mail.com';
+      emailInput.simulate('change');
+
+      const pwInput = wrapper.find('#password');
+      pwInput.instance().value = 'muhpassword';
+      pwInput.simulate('change');
+
+      const pwcInput = wrapper.find('#confirmPassword');
+      pwcInput.instance().value = 'notmuhpassword';
+      pwcInput.simulate('change');
+
+      wrapper.find('button').simulate('click');
+      expect(props.onSubmitAction).toHaveBeenCalledTimes(0);
     });
   });
 });

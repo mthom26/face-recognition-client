@@ -31,9 +31,34 @@ class CustomForm extends Component {
     });
   };
 
-  onSubmit = async (event, formData) => {
+  onSubmit = (event, formData) => {
     event.preventDefault();
-    this.props.onSubmitAction(formData);
+    if (this.validateInputs()) {
+      this.props.onSubmitAction(formData);
+    } else {
+      console.log('Inputs not valid');
+    }
+  };
+
+  validateInputs = () => {
+    const { name, email, password, confirmPassword } = this.state.formData;
+    const { showName, showEmail, showPassword, showPwConfirm } = this.props;
+
+    // Check for empty inputs
+    if (showName && name === '') return false;
+    if (showEmail && email === '') return false;
+    if (showPassword && password === '') return false;
+    if (showPwConfirm && confirmPassword === '') return false;
+
+    // Check passwords match
+    if (showPassword && showPwConfirm && password !== confirmPassword) {
+      return false;
+    }
+
+    // TODO - add email validation
+    // TODO - show error on frontend
+    // Checks passed!
+    return true;
   };
 
   render() {

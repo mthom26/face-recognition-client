@@ -8,6 +8,9 @@ const Profile = ({ user }) => {
       <h2>Profile</h2>
       <span>{user.name}</span>
       <span>{user.email}</span>
+      <span>{user.dateLastLogin}</span>
+      <span>{user.dateJoined}</span>
+      <span>{user.imageSubmissions}</span>
     </div>
   );
 };

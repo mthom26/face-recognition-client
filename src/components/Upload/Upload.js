@@ -25,7 +25,9 @@ class Upload extends Component {
       })
       .on('complete', result => {
         console.log(result);
-        const url = result.successful[0].response.body.imageUrl;
+        const url = `${process.env.REACT_APP_SERVER_URL}/${
+          result.successful[0].response.body.imageUrl
+        }`;
         const boxes = result.successful[0].response.body.data;
         this.setImageUrl(url);
         this.setBoundingBoxes(boxes);
@@ -37,7 +39,8 @@ class Upload extends Component {
     this.state = {
       showImage: false,
       imageUrl: '',
-      boundingBoxes: null
+      boundingBoxes: null,
+      sendImageUrl: ''
     };
   }
 
@@ -49,23 +52,64 @@ class Upload extends Component {
     this.setState({ boundingBoxes: boxes });
   };
 
+  onUpddateImageUrl = event => {
+    const { target } = event;
+    this.setState({ sendImageUrl: target.value });
+  };
+
+  onSendImageUrl = async () => {
+    try {
+      const url = `${process.env.REACT_APP_SERVER_URL}/detect-faces`;
+
+      const result = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({ input: this.state.sendImageUrl }),
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${this.props.token}`
+        }
+      });
+
+      const data = await result.json();
+      this.setState({
+        boundingBoxes: data.data,
+        imageUrl: this.state.sendImageUrl,
+        showImage: true
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   componentWillUnmount() {
     this.uppy.close();
   }
 
   render() {
-    const { showImage, imageUrl } = this.state;
+    const { showImage, imageUrl, sendImageUrl } = this.state;
 
     return (
-      <div>
-        <DragDrop uppy={this.uppy} />
-        <button onClick={() => this.uppy.upload()}>Upload!</button>
+      <div className={styles.outerContainer}>
+        <div className={styles.container}>
+          <div className={styles.innerContainer}>
+            <DragDrop uppy={this.uppy} />
+            <button onClick={() => this.uppy.upload()}>Upload!</button>
+          </div>
+          <div className={styles.innerContainer}>
+            <input
+              onChange={this.onUpddateImageUrl}
+              value={sendImageUrl}
+              placeholder="Copy your image url here!"
+              type="text"
+              name="imageUrl"
+              id="imageUrl"
+            />
+            <button onClick={this.onSendImageUrl}>Send Image!</button>
+          </div>
+        </div>
         {showImage && (
           <div className={styles.imageContainer}>
-            <img
-              src={`${process.env.REACT_APP_SERVER_URL}/${imageUrl}`}
-              alt=""
-            />
+            <img src={`${imageUrl}`} alt="" />
           </div>
         )}
       </div>

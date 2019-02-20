@@ -5,3 +5,21 @@
 .imageContainer img {
   width: 100%;
 }
+
+.outerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 2.5rem;
+}

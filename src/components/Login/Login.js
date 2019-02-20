@@ -17,11 +17,7 @@ class Login extends Component {
       });
 
       const data = await result.json();
-      this.props.setUser({
-        id: data.id,
-        name: data.name,
-        email: data.email
-      });
+      this.props.setUser(data.user);
       this.props.setToken(data.token);
       this.props.setIsLoggedIn(true);
       console.log(data);

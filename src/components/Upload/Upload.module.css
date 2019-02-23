@@ -4,6 +4,7 @@
 
 .imageContainer img {
   width: 100%;
+  border: 1px solid red;
 }
 
 .outerContainer {
@@ -25,4 +26,14 @@
   align-items: center;
   justify-content: flex-end;
   margin: 0 2.5rem;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid red;
+  background: #d1353488;
+  color: red;
 }

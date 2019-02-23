@@ -40,7 +40,8 @@ class Upload extends Component {
       showImage: false,
       imageUrl: '',
       boundingBoxes: null,
-      sendImageUrl: ''
+      sendImageUrl: '',
+      error: ''
     };
   }
 
@@ -57,8 +58,22 @@ class Upload extends Component {
     this.setState({ sendImageUrl: target.value });
   };
 
+  onUploadFiles = () => {
+    if (this.uppy.getFiles().length === 0) {
+      console.log('You have not selected a file to upload');
+      this.setState({ error: 'You have not selected a file to upload' });
+      return;
+    }
+    this.uppy.upload();
+  };
+
   onSendImageUrl = async () => {
     try {
+      if (this.state.sendImageUrl === '') {
+        console.log('Image Input is empty!');
+        this.setState({ error: 'Image Input is empty!' });
+        return;
+      }
       const url = `${process.env.REACT_APP_SERVER_URL}/detect-faces`;
 
       const result = await fetch(url, {
@@ -71,6 +86,7 @@ class Upload extends Component {
       });
 
       const data = await result.json();
+      console.log(data);
       this.setState({
         boundingBoxes: data.data,
         imageUrl: this.state.sendImageUrl,
@@ -86,14 +102,14 @@ class Upload extends Component {
   }
 
   render() {
-    const { showImage, imageUrl, sendImageUrl } = this.state;
+    const { showImage, imageUrl, sendImageUrl, error } = this.state;
 
     return (
       <div className={styles.outerContainer}>
         <div className={styles.container}>
           <div className={styles.innerContainer}>
             <DragDrop uppy={this.uppy} />
-            <button onClick={() => this.uppy.upload()}>Upload!</button>
+            <button onClick={this.onUploadFiles}>Upload!</button>
           </div>
           <div className={styles.innerContainer}>
             <input
@@ -107,6 +123,11 @@ class Upload extends Component {
             <button onClick={this.onSendImageUrl}>Send Image!</button>
           </div>
         </div>
+        {error && (
+          <div className={styles.error}>
+            <span>{error}</span>
+          </div>
+        )}
         {showImage && (
           <div className={styles.imageContainer}>
             <img src={`${imageUrl}`} alt="" />

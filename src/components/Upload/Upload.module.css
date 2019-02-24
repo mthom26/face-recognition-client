@@ -1,12 +1,3 @@
-.imageContainer {
-  max-width: 800px;
-}
-
-.imageContainer img {
-  width: 100%;
-  border: 1px solid red;
-}
-
 .outerContainer {
   width: 100%;
   display: flex;

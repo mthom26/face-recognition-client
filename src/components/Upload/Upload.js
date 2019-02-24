@@ -5,6 +5,7 @@ import { DragDrop } from '@uppy/react';
 // import '@uppy/drag-drop/dist/style.css';
 
 import styles from './Upload.module.css';
+import ImageContainer from '../ImageContainer/ImageContainer';
 
 class Upload extends Component {
   constructor(props) {
@@ -29,8 +30,11 @@ class Upload extends Component {
           result.successful[0].response.body.imageUrl
         }`;
         const boxes = result.successful[0].response.body.data;
-        this.setImageUrl(url);
-        this.setBoundingBoxes(boxes);
+        this.setState({
+          imageUrl: url,
+          showImage: true,
+          boundingBoxes: boxes
+        });
         // uppy.reset() called to reset this uppy instance and allow more
         // uploads without refreshing
         this.uppy.reset();
@@ -44,14 +48,6 @@ class Upload extends Component {
       error: ''
     };
   }
-
-  setImageUrl = url => {
-    this.setState({ imageUrl: url, showImage: true });
-  };
-
-  setBoundingBoxes = boxes => {
-    this.setState({ boundingBoxes: boxes });
-  };
 
   onUpddateImageUrl = event => {
     const { target } = event;
@@ -102,7 +98,13 @@ class Upload extends Component {
   }
 
   render() {
-    const { showImage, imageUrl, sendImageUrl, error } = this.state;
+    const {
+      showImage,
+      imageUrl,
+      sendImageUrl,
+      error,
+      boundingBoxes
+    } = this.state;
 
     return (
       <div className={styles.outerContainer}>
@@ -129,9 +131,7 @@ class Upload extends Component {
           </div>
         )}
         {showImage && (
-          <div className={styles.imageContainer}>
-            <img src={`${imageUrl}`} alt="" />
-          </div>
+          <ImageContainer imageUrl={imageUrl} boundingBoxes={boundingBoxes} />
         )}
       </div>
     );

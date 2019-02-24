@@ -59,10 +59,13 @@ class Upload extends Component {
   onUploadFiles = () => {
     if (this.uppy.getFiles().length === 0) {
       console.log('You have not selected a file to upload');
-      this.setState({ error: 'You have not selected a file to upload' });
+      this.setState({
+        error: 'You have not selected a file to upload',
+        showImage: false
+      });
       return;
     }
-    this.setState({ loading: true });
+    this.setState({ loading: true, error: false, showImage: false });
 
     this.uppy.upload();
   };
@@ -71,10 +74,13 @@ class Upload extends Component {
     try {
       if (this.state.sendImageUrl === '') {
         console.log('Image Input is empty!');
-        this.setState({ error: 'Image Input is empty!' });
+        this.setState({
+          error: 'Image Input is empty!',
+          showImage: false
+        });
         return;
       }
-      this.setState({ loading: true });
+      this.setState({ loading: true, error: false, showImage: false });
 
       const url = `${process.env.REACT_APP_SERVER_URL}/detect-faces`;
 

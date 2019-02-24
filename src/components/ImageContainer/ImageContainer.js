@@ -16,24 +16,32 @@ class ImageContainer extends React.Component {
     this.imageRef = React.createRef();
   }
 
+  setBoxLocations = () => {
+    const img = this.imageRef.current;
+    const width = img.width;
+    const height = img.height;
+    const boxLocations = this.props.boundingBoxes.map(box => ({
+      top: box.top_row * height,
+      left: box.left_col * width,
+      width: box.right_col * width - box.left_col * width,
+      height: box.bottom_row * height - box.top_row * height
+    }));
+    this.setState({
+      width,
+      height,
+      boxLocations,
+      showBoxes: true
+    });
+  };
+
   componentDidMount() {
     const img = this.imageRef.current;
-    img.addEventListener('load', () => {
-      const width = img.width;
-      const height = img.height;
-      const boxLocations = this.props.boundingBoxes.map(box => ({
-        top: box.top_row * height,
-        left: box.left_col * width,
-        width: box.right_col * width - box.left_col * width,
-        height: box.bottom_row * height - box.top_row * height
-      }));
-      this.setState({
-        width,
-        height,
-        boxLocations,
-        showBoxes: true
-      });
-    });
+    img.addEventListener('load', this.setBoxLocations);
+  }
+
+  componentWillUnmount() {
+    const img = this.imageRef.current;
+    img.removeEventListener('load', this.setBoxLocations);
   }
 
   render() {

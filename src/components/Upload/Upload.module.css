@@ -28,3 +28,13 @@
   background: #d1353488;
   color: red;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 220px;
+  border: 2px solid gray;
+  background: #00000076;
+}

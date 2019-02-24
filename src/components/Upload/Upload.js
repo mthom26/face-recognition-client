@@ -33,7 +33,8 @@ class Upload extends Component {
         this.setState({
           imageUrl: url,
           showImage: true,
-          boundingBoxes: boxes
+          boundingBoxes: boxes,
+          loading: false
         });
         // uppy.reset() called to reset this uppy instance and allow more
         // uploads without refreshing
@@ -45,7 +46,8 @@ class Upload extends Component {
       imageUrl: '',
       boundingBoxes: null,
       sendImageUrl: '',
-      error: ''
+      error: '',
+      loading: false
     };
   }
 
@@ -60,6 +62,8 @@ class Upload extends Component {
       this.setState({ error: 'You have not selected a file to upload' });
       return;
     }
+    this.setState({ loading: true });
+
     this.uppy.upload();
   };
 
@@ -70,6 +74,8 @@ class Upload extends Component {
         this.setState({ error: 'Image Input is empty!' });
         return;
       }
+      this.setState({ loading: true });
+
       const url = `${process.env.REACT_APP_SERVER_URL}/detect-faces`;
 
       const result = await fetch(url, {
@@ -86,7 +92,8 @@ class Upload extends Component {
       this.setState({
         boundingBoxes: data.data,
         imageUrl: this.state.sendImageUrl,
-        showImage: true
+        showImage: true,
+        loading: false
       });
     } catch (err) {
       console.log(err);
@@ -103,7 +110,8 @@ class Upload extends Component {
       imageUrl,
       sendImageUrl,
       error,
-      boundingBoxes
+      boundingBoxes,
+      loading
     } = this.state;
 
     return (
@@ -128,6 +136,11 @@ class Upload extends Component {
         {error && (
           <div className={styles.error}>
             <span>{error}</span>
+          </div>
+        )}
+        {loading && (
+          <div className={styles.loading}>
+            <span>Analysing image...</span>
           </div>
         )}
         {showImage && (

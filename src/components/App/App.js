@@ -51,6 +51,11 @@ class App extends Component {
       });
 
       const data = await result.json();
+      // Stored jwt may have expired so check if an error is returned
+      if (data.error) {
+        this.setState(defaultState);
+        return;
+      }
       this.setState({ token, user: data.user, isLoggedIn: true });
     } catch (err) {
       console.log(err);

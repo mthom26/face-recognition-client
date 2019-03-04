@@ -52,8 +52,9 @@ class ImageContainer extends React.Component {
       <div id="imageContainer" className={styles.imageContainer}>
         <img ref={this.imageRef} src={`${imageUrl}`} alt="" />
         {showBoxes &&
-          boxLocations.map(box => (
+          boxLocations.map((box, index) => (
             <div
+              key={index}
               style={{
                 top: box.top,
                 left: box.left,

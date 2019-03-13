@@ -24,6 +24,14 @@ class Upload extends Component {
           authorization: `Bearer ${props.token}`
         }
       })
+      .on('file-added', file => {
+        const files = this.uppy.getFiles();
+        if (files.length > 1) {
+          // delete the first file leaving only the newly added one
+          this.uppy.removeFile(files[0].id);
+        }
+        this.setState({ fileAdded: true });
+      })
       .on('complete', result => {
         console.log(result);
         const url = `${process.env.REACT_APP_SERVER_URL}/${
@@ -34,7 +42,8 @@ class Upload extends Component {
           imageUrl: url,
           showImage: true,
           boundingBoxes: boxes,
-          loading: false
+          loading: false,
+          fileAdded: false
         });
         // uppy.reset() called to reset this uppy instance and allow more
         // uploads without refreshing
@@ -42,6 +51,7 @@ class Upload extends Component {
       });
 
     this.state = {
+      fileAdded: false,
       showImage: false,
       imageUrl: '',
       boundingBoxes: null,
@@ -117,7 +127,8 @@ class Upload extends Component {
       sendImageUrl,
       error,
       boundingBoxes,
-      loading
+      loading,
+      fileAdded
     } = this.state;
 
     return (
@@ -125,6 +136,11 @@ class Upload extends Component {
         <div className={styles.container}>
           <div className={styles.innerContainer}>
             <DragDrop uppy={this.uppy} />
+            {fileAdded ? (
+              <span>You have added a file!</span>
+            ) : (
+              <span>You have not added a file yet.</span>
+            )}
             <button onClick={this.onUploadFiles}>Upload!</button>
           </div>
           <div className={styles.innerContainer}>

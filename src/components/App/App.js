@@ -6,6 +6,8 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import Profile from '../Profile/Profile';
 import Upload from '../Upload/Upload';
+import PasswordReset from '../PasswordReset/PasswordReset';
+import GetPasswordReset from '../GetPasswordReset/GetPasswordReset';
 
 import styles from './App.module.css';
 
@@ -133,6 +135,11 @@ class App extends Component {
               render={() =>
                 isLoggedIn ? <Profile user={user} /> : <Redirect to="/login" />
               }
+            />
+            <Route path="/password-reset" render={() => <PasswordReset />} />
+            <Route
+              path="/get-password-reset"
+              render={() => <GetPasswordReset />}
             />
           </div>
         </Fragment>

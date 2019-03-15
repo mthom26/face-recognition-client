@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import CustomForm from '../CustomForm/CustomForm';
 import styles from './Login.module.css';
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  onGetPasswordReset = () => {
+    this.props.history.push('/get-password-reset');
+  };
+
   onSubmit = async formData => {
     try {
       const url = `${process.env.REACT_APP_SERVER_URL}/login`;
@@ -31,9 +40,15 @@ class Login extends Component {
       <div className={styles.container}>
         <h2>Login</h2>
         <CustomForm showEmail showPassword onSubmitAction={this.onSubmit} />
+        <p>
+          Forgot your password?{' '}
+          <span className={styles.clickable} onClick={this.onGetPasswordReset}>
+            Click here
+          </span>
+        </p>
       </div>
     );
   }
 }
 
-export default Login;
+export default withRouter(Login);
